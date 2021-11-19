@@ -1,2 +1,2 @@
-# GraphQL-with-Node-JS
-GraphQL with Node JS
+# Node-JS-GraphQL
+Node JS GraphQL
