@@ -11,7 +11,8 @@ const AuthorSchema = mongoose.model("Author",Author)
 
 exports.create = async (author)=>{
     try{
-        const _author = new AuthorSchema(author)
+        const {name,age} = author
+        const _author = new AuthorSchema({name,age})
         const response = await _author.save()
         return response
     }catch(err){

@@ -1,14 +1,11 @@
 const express = require("express")
 const app = express()
+const {graphqlHTTP} = require("express-graphql") // Graphql request need to convert
 
 require('dotenv').config()
+require("./db")()
 
-const {graphqlHTTP} = require("express-graphql") // Graphql request need to convert
-const schema = require("./schema/schema")
-
-const db = require("./db")
-db.connect()
-
+const schema = require("./graphQL/index")
 app.use('/graphql',graphqlHTTP({
     schema,
     graphiql:true
